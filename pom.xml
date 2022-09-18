@@ -40,6 +40,8 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver -->
+
 	</dependencies>
 
 	<build>

@@ -1,15 +1,21 @@
 package com.ucmo.netflix.repository;
 
-import java.util.List;
-
-import com.ucmo.netflix.dto.Movie;
+import com.ucmo.netflix.model.MovieDocument;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.data.repository.query.Param;
-import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@RepositoryRestResource(collectionResourceRel = "people", path = "people")
-public interface MovieRepository extends MongoRepository<Movie, String> {
+import java.util.List;
+import java.util.Optional;
 
-    List<Movie> findByLastName(@Param("title") String name);
+public interface MovieRepository extends MongoRepository<MovieDocument, String> {
+
+    /*List<MovieEntity> findByTitle(@Param("title") String name);*/
+
+    List<MovieDocument> findAll();
+
+    @Override
+    Optional<MovieDocument> findById(String s);
+
+    @Override
+    void deleteById(String s);
 
 }
